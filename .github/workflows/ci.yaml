@@ -31,12 +31,13 @@ jobs:
 
     - name: Create CML report
       env:
-        REPO_TOKEN: ${{ secrets.NOEL_TOKEN }}
+        REPO_TOKEN: ${{ secrets.GITREPO_TOKEN }}
       run: |
+      
         echo "# First Line of our report" >> report.md
         echo "## Bar Plots" >> report.md
         echo '![](./bars.png "Bar plot")' >> report.md
         echo "## Line Plots" >> report.md
         echo '![](./lines.png "Bar plot")' >> report.md
 
-        cml comment create report.md --token ${{ secrets.NOEL_TOKEN }}
+        cml comment create report.md
